@@ -1,4 +1,4 @@
-
+  <navigationBar id="navigationBar" color="{{colorTitle}}" title="{{title}}" back="{{false}}" background="{{barBg}}"></navigationBar>
 <view class='swiper_box'>
   <swiper
   indicator-dots="{{indicatorDots}}"
@@ -11,8 +11,65 @@
   >
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" width="750" height="150" />
+        <image src="{{item}}" class="slide-image"  />
       </swiper-item>
     </block>
   </swiper>
 </view>
+
+<view class='servise-title'>
+    <image src='{{imgTitle}}' class='servise-left'></image>
+    <text>{{title11}}</text>
+    <image src='{{imgTitle}}' class='servise-right'></image>
+  </view>
+
+  <view class='serve-content'>
+    <view wx:for='{{serveArr}}' wx:key='{{index}}' class='serve-item'  >
+      <image src='{{item.url}}'/>
+      <text class='carTitle'>{{item.title}}</text>
+    </view>
+  </view>
+
+  <view class='servise-title'>
+    <image src='{{imgTitle}}' class='servise-left'></image>
+    <text>{{title22}}</text>
+    <image src='{{imgTitle}}' class='servise-right'></image>
+  </view>
+
+  <view class='carBox'>
+    <view wx:for='{{carsArr}}' wx:key='{{index}}' wx:for-item="items" class="carcate-item">
+      <view class='go-detail'> 
+        <image src='{{items.pic}}' class='img-box'/>
+
+        <text class='car_name'>{{items.type_name}}</text>
+
+        <view class='introduceP'>
+          <text>{{items.license_reg_date}}年上牌</text>|
+          <text>{{items.kilometre}}万公里</text>|
+          <text>{{items.environmental_standards}}</text>
+        </view>
+
+        <view class='carcate-price'>
+          {{items.low_price/10000}}
+          <text>万元起</text>
+        </view>
+        
+      </view>
+    </view>
+
+  </view>
+
+  
+  <view class='footer-box'>
+    <view class="address-box">
+      <image class= 'address-img'  src='https://www.youcku.com/Public/images/mobile/version3_images/positionax.png'/>
+      <text class='address-message'>南宁市武鸣区红岭社区新宁路72-1号。鑫铭汽车信息咨询中心</text>
+    </view>
+
+    <view class= 'phone-box'>
+      <image class='phone-img' src='https://www.youcku.com/Public/images/mobile/version3_images/dianhuaax.png' />
+
+      
+    </view>
+  </view>
+  
