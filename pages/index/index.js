@@ -9,7 +9,8 @@ Page({
       title:'鑫铭汽车',
       barBg:'#f8f8f8',
       colorTitle:'#000000',
-
+      phone1: '13788607771',
+      phone2: '18878658778',
       imgUrls: [
       'https://www.youcku.com/Public/images/mobile/index_img/banner/gzh_banner.png', 'https://www.youcku.com/Public/images/mobile/index_img/banner/20190107114701.png',
       ],
@@ -266,6 +267,12 @@ Page({
     },
      
 
+  bindViewTap:function(){
+    wx.navigateTo({
+      url:'../map/map'
+    })
+  },
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -301,5 +308,20 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  to_call: function (event) {
+    var $this = this;
+    console.log(event.currentTarget.dataset.phonenum)
+    wx.makePhoneCall({
+      phoneNumber: event.currentTarget.dataset.phonenum 
+    })
+  },
+
+  gotomap:function(){
+    wx.navigateTo({
+      url: "pages/map/map"
+    })
   }
+
 })
